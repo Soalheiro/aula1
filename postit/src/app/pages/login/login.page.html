@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="login">
+  <img class="background" src="assets/imgs/bg_img1.png">
 
-<ion-content>
+  <img class="detail" src="assets/imgs/test1.svg">
+  <div class="container">
+    <img src="assets/imgs/logo.svg">
+    
+    <div class="container--inputs">
+      <span>Email</span>
+      <input type="text" [(ngModel)]="loginPayload.email">
+      <span>Senha</span>
+      <input type="password" [(ngMOdel)]="loginPayload.password">
+    </div>
 
-</ion-content>
+    <ion-button >confirmar</ion-button>
+
+    <p>Não possui conta? <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Cadastra-se!</a></p>
+  </div>
+</div>
