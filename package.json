@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@ionic/cli": "^6.20.1"
+  },
+  "devDependencies": {
+    "@angular/cli": "14.0.6"
+  }
+}
