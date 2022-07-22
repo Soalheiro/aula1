@@ -9,11 +9,14 @@
       <span>Email</span>
       <input type="text" [(ngModel)]="loginPayload.email">
       <span>Senha</span>
-      <input type="password" [(ngMOdel)]="loginPayload.password">
+      <input type="password" [(ngModel)]="loginPayload.password">
     </div>
 
-    <ion-button >confirmar</ion-button>
-
+    <ion-button [class.disabled]="!canLogin()" class="disabled" (click)="login()" >
+      {{ isLoading ? 'carregando...' : 'confirmar'}}
+      <app-half-circle-spinner *ngIf="isLoading" [animationDuration]="1000" [size]="25" [color]="'white'"></app-half-circle-spinner>
+    </ion-button>
+    
     <p>Não possui conta? <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Cadastra-se!</a></p>
   </div>
 </div>
