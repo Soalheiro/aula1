@@ -1,18 +1,18 @@
 <div class="login">
   <img class="background" src="assets/imgs/bg_img1.png">
-
+  
   <img class="detail" src="assets/imgs/test1.svg">
   <div class="container">
-    <img src="assets/imgs/logo.svg">
+    <app-logo src="assets/imgs/logo.svg" [full]="false" (onClick)="logoClick($event)"> </app-logo>
     
     <div class="container--inputs">
       <span>Email</span>
-      <input type="text" [(ngModel)]="loginPayload.email">
+      <input (keydoen.enter)="password.focus()" class="input" type="text" [(ngModel)]="loginPayload.email">
       <span>Senha</span>
-      <input type="password" [(ngModel)]="loginPayload.password">
+      <input #password (keydown.enter)="login()" class="input" type="password" [(ngModel)]="loginPayload.password">
     </div>
 
-    <ion-button [class.disabled]="!canLogin()" class="disabled" (click)="login()" >
+    <ion-button  class="button" [class.disabled]="!canLogin()" class="disabled" (click)="login()" >
       {{ isLoading ? 'carregando...' : 'confirmar'}}
       <app-half-circle-spinner *ngIf="isLoading" [animationDuration]="1000" [size]="25" [color]="'white'"></app-half-circle-spinner>
     </ion-button>
